@@ -1,0 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body{
+    font-family: 'Roboto',sans-serif;
+    margin: 0px;
+    display: flex; /*using flexbox makes handling elements easy */
+    flex-direction: column; /*can be rows or columns its how elements are placed one after other*/
+    height: 100vh; /* 100 vh is complete screen*/
+    align-items: center; /* brings element to center of the row if flex direction is column and vise versa*/
+    justify-content: center; /*complete center of the page nb:height should be present*/
+    overflow: hidden;   /*to avoid scroll bar  */
+}

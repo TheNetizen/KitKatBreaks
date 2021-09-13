@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root{ /*custom variable of css, cascading variable/css variables*/
+    --line-border-fill:#3498db;
+    --line-border-empty:#e0e0e0;
+}
+body{
+    background-color: rgb(250, 250, 249);
+    font-family: 'Roboto',sans-serif;
+    margin: 0px;
+    display: flex; /*using flexbox makes handling elements easy */
+    flex-direction: column; /*can be rows or columns its how elements are placed one after other*/
+    height: 100vh; /* 100 vh is complete screen*/
+    align-items: center; /* brings element to center of the row if flex direction is column and vise versa*/
+    justify-content: center; /*complete center of the page nb:height should be present*/
+    overflow: hidden;   /*to avoid scroll bar  */
+}
+.container{
+text-align: center
+}
+.progress-container{
+    display: flex ;
+    max-width: 100%;
+    width:350px;
+    justify-content:space-between;
+    margin-bottom: 50px;
+    position:relative;
+}
+.progress-container::before{
+    content: ''; /* whenever we use :before :after we need to use content*/
+    background-color:var(--line-border-empty);/*we can use variable instead of using color name again and again*/
+    transform: translateY(-50%);
+    position:absolute;
+    top:50%;
+    height: 4px;
+    z-index: -1;
+    left:0;
+    width:100%;
+    
+    
+}
+.progress{
+    background-color:var(--line-border-fill);
+    position:absolute;
+    top:50%;
+    z-index: -1;
+    left:0;
+    height: 4px;
+    width:0%;
+    transform: translateY(-50%); /*it is use to get verticle line in middle of character */
+    transition: 0.4s ease-in;
+}
+.circle{
+background-color: white;
+color:#999;
+border-radius: 50%;
+height: 30px;
+width: 30px;
+display: flex;
+justify-content: center;
+align-items:center ;
+border:3px solid var(--line-border-empty);
+transition: 0.4s ease;
+}
+.circle.active{
+    border:3px solid var(--line-border-fill);
+}
+.btn{
+background-color:var(--line-border-fill);
+color:white;
+font-size:14px;
+border:none;
+margin:5px;
+border-radius:6px;
+padding:8px 30px;
+cursor: pointer;
+}
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
+.btn:active{
+    transform: scale(0.98);
+}
